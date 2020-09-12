@@ -10,10 +10,13 @@ theme.font = 'Roboto medium 10'
 -- Colors Pallets
 
 -- Primary
-theme.primary = mat_colors.deep_orange
+theme.primary = mat_colors.blue
 
 -- Accent
 theme.accent = mat_colors.pink
+
+-- Occupied
+theme.occupied = mat_colors.grey
 
 -- Background
 theme.background = mat_colors.grey
@@ -23,7 +26,7 @@ local awesome_overrides =
   theme.dir = os.getenv('HOME') .. '/.config/awesome/theme'
 
   theme.icons = theme.dir .. '/icons/'
-  theme.wallpaper = theme.dir .. '/wallpapers/DarkCyan.png'
+  theme.wallpaper = theme.dir .. '/wallpapers/3.png'
   --theme.wallpaper = '#e0e0e0'
   theme.font = 'Roboto medium 10'
   theme.title_font = 'Roboto medium 14'
@@ -67,7 +70,12 @@ local awesome_overrides =
   -- Taglist
 
   theme.taglist_bg_empty = theme.background.hue_800
-  theme.taglist_bg_occupied = theme.background.hue_800
+  theme.taglist_bg_occupied =
+    'linear:0,0:' ..
+    dpi(48) ..
+      ',0:0,' ..
+        theme.occupied.hue_500 ..
+          ':0.08,' .. theme.occupied.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
   theme.taglist_bg_urgent =
     'linear:0,0:' ..
     dpi(48) ..
