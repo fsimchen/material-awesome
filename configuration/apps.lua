@@ -33,7 +33,8 @@ return {
     'xfce4-power-manager', -- Power manager
      'flameshot',
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
-    'redshift -P -O 2300',
-    'corectrl'
+    'corectrl',
+    'redshift -x',
+    'redshift-gtk -t 3200:3200'
   }
 }
