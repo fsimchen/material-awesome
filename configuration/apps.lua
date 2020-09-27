@@ -18,7 +18,7 @@ return {
     browser = 'firefox',
     editor = 'code', -- gui text editor
     social = rofi_command,
-    game = rofi_command,
+    game = 'lutris lutris:rungameid/1',
     files = 'nautilus',
     music = rofi_command,
     lab = 'VirtualBox -style Fusion %U' 

@@ -7,6 +7,9 @@ local clickable_container = require('widget.material.clickable-container')
 local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
 
+-- Custom widgets
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
+
 local dpi = require('beautiful').xresources.apply_dpi
 
 local icons = require('theme.icons')
@@ -22,7 +25,9 @@ local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d/%m/
 local month_calendar = awful.widget.calendar_popup.month({
   screen = s,
   start_sunday = false,
-  week_numbers = true
+  week_numbers = false,
+  font = "Roboto Mono bold 10",
+  long_weekdays = true
 })
 month_calendar:attach(textclock)
 
@@ -127,6 +132,15 @@ local TopPanel = function(s, offset)
     nil,
     {
       layout = wibox.layout.fixed.horizontal,
+      weather_widget({
+            api_key='69d83b9d9e0267042d082cc540730405',
+            coordinates = {-30.0381783,-51.2232979},
+            icon_pack_name = "VitalyGorbachev",
+            icons_extension = ".png",
+            font_name = "Roboto Mono",
+            show_hourly_forecast = true,
+            show_daily_forecast = true,
+        }),
       -- Clock
       clock_widget,
       -- Layout box
