@@ -15,18 +15,18 @@ return {
     screenshot = 'flameshot full -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot full -p ~/Pictures -d 5000',
-    browser = 'firefox',
+    browser = '/usr/bin/google-chrome-stable %U',
     editor = 'code', -- gui text editor
     social = rofi_command,
     game = 'lutris lutris:rungameid/1',
-    files = 'nautilus',
+    files = 'thunar',
     music = rofi_command,
     lab = 'VirtualBox -style Fusion %U' 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
     'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
-    'nm-applet --indicator', -- wifi
+    'nm-applet --indicator', -- network icon
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
     'numlockx on', -- enable numlock
